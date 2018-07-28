@@ -1,1 +1,3 @@
 # FCCTechnicalDocumentationPage
+
+freeCodeCamp learning exercise

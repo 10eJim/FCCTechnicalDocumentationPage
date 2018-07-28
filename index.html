@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="tech.css">
+    <title>Technical Documentation Page</title>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</head>
+<body>
+    <nav id="navbar">
+        <header>A-Frame Environmental Component Documentation (from Diego F. Goberna's github page)</header>
+        <ul> 
+          <a class="nav-link" href="#Introduction" rel="internal"><li>Introduction</li></a>
+          <a class="nav-link" href="#What_you_should_already_know" rel="internal"><li>What you should already know</li></a>
+          <a class="nav-link" href="#Initial_A-Frame_Set-up" rel="internal"><li>Initial A-Frame Set-up</li></a>
+          <a class="nav-link" href="#Including_the_Environment" rel="internal"><li>Including the Environment</li></a>
+          <a class="nav-link" href="#Selecting_an_Environment" rel="internal"><li>Selecting an Environment</li></a>
+          <a class="nav-link" href="#Adjusting_the_Parameters" rel="internal"><li>Adjusting the Parameters</li></a>
+          <a class="nav-link" href="#Reference" rel="internal"><li>Reference</li></a>
+        </ul>
+      </nav>
+      <main id="main-doc">
+        <section class="main-section" id="Introduction">
+          <header>Introduction</header>
+          <article>  
+            <p>A-Frame is a web framework for building virtual reality (VR) experiences. A-Frame was developed to be an easy but powerful way to develop VR content. As an independent open source project, A-Frame has grown to be one of the largest and most welcoming VR communities.</p>
+      
+            <p>A-Frame is built on a three.js framework, providing users access to:</p>
+      
+      <li>Javascript</li>
+      <li>DOM APIs</li>
+      <li>three.js</li>
+      <li>WebVR</li>
+      <li>WebGL</li>
+
+             <p>Since A-Frame allows for simple HTML and Javascript manipulation, anyone familiar with both can quickly develop impressive WebVr experiences that run completely in the browser.  This documentation is intended to introduce you to the environment component, which allows you to generate a series of fantastic environments for your VR area.  As I have been working with simple interactions to learn about using A-Frame, I have found placing them in an environment makes those simple experiences much more satisfying.</p>
+            </article>
+          </section>
+        <section class="main-section" id="What_you_should_already_know">
+          <header>What you should already know</header>
+          <article>
+            <p>This guide assumes you have the following basic background:</p>
+      
+            <li>A general understanding of the Internet and the World Wide Web (WWW).</li>
+            <li>Good working knowledge of HyperText Markup Language (HTML).</li>
+            <li>Some programming experience. If you are completely new to programming, I would suggest starting elsewhere.</li>
+            </artice>
+          </section>
+        <section class="main-section" id="Initial_A-Frame_Set-up">
+          <header>Initial A-Frame Set-up</header>
+          <article>
+          <p>Initializing our A-Frame page is simple and easy.  First, we need to include the A-Frame script tag in the head and our a-scene tag in the body.  All of our A-Frame tags will go inside the A-scene tag.  Like this:</p>
+            <code>
+              &lthtml&gt
+              <br>
+                &lthead&gt
+                <br>
+                  &ltscript src="https://aframe.io/releases/0.8.0/aframe.min.js"&gt&lt/script&gt
+                  <br>
+                &lt/head&gt
+                <br>
+                &ltbody&gt
+                <br>
+                  &lta-scene&gt
+                  <br>
+                  &lt/a-scene&gt
+                  <br>
+                &lt/body&gt
+                <br>
+              &lt/html&gt
+              <br>
+            </code>
+          <p>This initial set-up will set up WebGL, the canvas, camera, lights, renderer, render loop and visual inspector development tools.  It also implements out of the box WebVR support on platforms such as HTC Vive, Oculus Rift, Samsung GearVR, and smartphones (Google Cardboard).</p>
+          </article>
+          </section>
+        <section class="main-section" id="Including_the_Environment">
+          <header>Including the Environment</header>
+          <article> 
+            <p>Now that we have our inital A-Frame Scene code in place, we can render an environment very easily using Diego F. Goberna's environment component, available on github.  First, we simply need to add the environmental component script to our head section with our A-Frame script tag.  The script tag is as follows:</p>
+              <code>
+                  &ltscript src="https://rawgit.com/feiss/aframe-environment-component/master/dist/aframe-environment-component.min.js"&gt&lt/script&gt
+              </code>
+            <p>Now all you have to do is add an environment component inside your a-scene tag.  The environment component looks like this:</p>
+              <code>
+                  &lta-entity environment&gt&lt/a-entity&gt
+              </code>
+            <p>You have now included the default environment component to your scene.  In the next section, we'll look at the other environments we can use and how to alter them from their default settings.</p>
+          </article>
+          </section>
+        <section class="main-section" id="Selecting_an_Environment">
+          <header>Selecting an Environment</header>
+          <p>
+            The component includes a number of preset environments in it's "preset" attribute.  You can easily select from the preset environments by including your selection in the code as follows:
+          </p>
+            <code>
+                &lta-entity environment="preset: (name of the preset)"&gt&lt/a-entity&gt
+            </code>
+          <p>
+            The component currently offers presets of default, contact, egypt, checkerboard, forest, goaland, yavapai, goldmine, threetowers, poison, arches, tron, japan, dream, volcano, starry, and osiris.  So, if we wanted to select the forest, for example, we would specify as follows:
+          </p>
+            <code>
+            &lta-entity environment="preset: forest"&gt&lt/a-entity&gt
+            </code>
+          <p>
+            Great.  Now we can select the environment we want to include.  To preview the available options, take a look at <a href="https://feiss.github.io/aframe-environment-component/" target="_blank">aframe-environment-component Test Page</a>
+          </p>
+         
+          </section>
+        <section class="main-section" id="Adjusting_the_Parameters">
+          <header>Adjusting the Parameters</header>
+          <article>
+            <p>
+            As with all A-Frame entities, the enviroment component has attributes that can be altered to your preferences by editing them from their default values.
+            </p>
+            <p>
+            The easiest way to do this is to open the visual inspector, while examining your scene, using "ctrl-alt-i" on your keyboard to launch the visual inspector.  Search for the "environment" tab on the left side filter and select it.  You can then alter the default attributes on the right, until the scene is to you liking.  You can then press the "Copy Attributes" button to clipboard your changes and put them in your code.  You alter the values of the default settings by including your attribute selections after preset, seperated by semi-colons.  Like this:
+            </p>
+            <code>
+              &lta-entity environment="preset: forest; groundColor: #445; grid: cross"&gt&lt/a-entity&gt
+              </code>
+            <p>
+              For a complete chart of all of the attributes that can be altered, refer to the component's <a href="https://github.com/feiss/aframe-environment-component" target="_blank">Github Repository</a>
+            </p>
+          </article>
+          </section>
+        <section class="main-section" id="Reference">
+          <header>Reference</header>
+          <article>
+            <li>All the documentation in this page is taken from the component's <a href="https://github.com/feiss/aframe-environment-component" target="_blank">Github Repository</a> or A-Frame's <a href="https://aframe.io/" target="_blank">Main Site</a>
+          </article>
+          </section>
+      </main>
+
+
+</body>
+</html>
